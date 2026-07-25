@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sheel3d.com/sitemap.xml
+
+# Block access to admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow access to important directories
+Allow: /images/
+Allow: /assets/
+Allow: /lovable-uploads/
+
+# Crawl delay (optional, helps prevent overloading)
+Crawl-delay: 1
