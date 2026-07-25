@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Redirecting…</title>
+<script>
+// GitHub Pages serves this root 404 for any unknown path. Work out which
+// preview app the deep link belongs to, stash the route, and hand off to that
+// app's index.html so the SPA router can take over.
+(function () {
+  var base = '/sheel3d-preview/';
+  var p = location.pathname;
+  var m = p.match(/^\/sheel3d-preview\/(v1|v3)(\/.*)?$/);
+  if (m) {
+    var app = base + m[1] + '/';
+    var rest = (m[2] || '/').replace(/^\//, '');
+    sessionStorage.setItem('spaRedirect', rest + location.search + location.hash);
+    location.replace(app);
+  } else {
+    location.replace(base);
+  }
+})();
+</script></head><body></body></html>
